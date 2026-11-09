@@ -120,7 +120,7 @@
 
         .product-img-box {
             width: 100%;
-            background: #f1f5f9;
+            background: #ffffff;
             border-radius: 8px;
             padding: 15px;
             text-align: center;
@@ -328,11 +328,11 @@
 
     <div class="container">
         
-        <!-- Product Showcase -->
+        <!-- Showcase do Produto -->
         <div class="product-card">
             <span class="badge-discount">-60% OFF</span>
             <div class="product-img-box">
-                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=500&q=80" alt="Lixeira Automática Inteligente">
+                <img src="https://m.media-amazon.com/images/I/51PZtW4gTFL._AC_SL1000_.jpg" alt="Lixeira Inteligente 12L com Sensor Automático">
             </div>
             <h1 class="product-title">Lixeira Inteligente 12L com Sensor Automático</h1>
             
@@ -349,7 +349,7 @@
             </ul>
         </div>
 
-        <!-- Order Form Sync Pay -->
+        <!-- Formulário de Checkout Sync Pay -->
         <div class="checkout-card" id="form-card">
             <h2 class="form-title">
                 <i class="fa-solid fa-shield-halved" style="color: var(--success);"></i>
@@ -378,12 +378,12 @@
                 </div>
 
                 <button type="submit" class="btn-syncpay">
-                    <i class="fa-brands fa-pix"></i> Pagar R$ 29,99 via Pix Sync Pay
+                    <i class="fa-brands fa-pix"></i> PAGAR R$ 29,99 VIA PIX
                 </button>
             </form>
         </div>
 
-        <!-- Sync Pay Pix Dynamic Section -->
+        <!-- Área Exclusiva do Pix Sync Pay -->
         <div id="pix-section">
             <h2 style="color: var(--primary); font-size: 1.4rem; font-weight: 800;">
                 <i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Pedido Gerado pela Sync Pay!
@@ -409,8 +409,8 @@
     </footer>
 
     <script>
-        // COLA A TUA CHAVE DE API DA SYNC PAY DENTRO DAS ASPAS ABAIXO (LINHA 386):
-        const SYNC_PAY_API_KEY = "9b2b67c8-5d84-42e9-b164-34cadcfb9745";
+        // COLA A SUA CHAVE PRIVADA DE API DA SYNC PAY DENTRO DAS ASPAS ABAIXO:
+        const SYNC_PAY_API_KEY = "9e56a541-c59f-4126-a294-db0f50708b02";
 
         document.getElementById('order-form').addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -447,7 +447,7 @@
                 console.log("Integrado em modo de exibição:", error);
             }
 
-            // Exibe a tela do Pix para o cliente
+            // Exibe a tela do Pix para o cliente apenas após o envio
             document.getElementById('form-card').style.display = 'none';
             document.getElementById('pix-section').style.display = 'block';
             document.getElementById('pix-section').scrollIntoView({ behavior: 'smooth' });
