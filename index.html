@@ -232,39 +232,12 @@
             color: var(--text-main);
         }
 
-        .form-group {
-            margin-bottom: 12px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.82rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-            color: var(--text-muted);
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 11px 12px;
-            background: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 0.9rem;
-            outline: none;
-        }
-
-        .form-group input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(37,99,235,0.1);
-        }
-
         .btn-syncpay {
             width: 100%;
             background: #16a34a;
             color: white;
             border: none;
-            padding: 15px;
+            padding: 16px;
             font-size: 1.1rem;
             font-weight: 800;
             border-radius: 6px;
@@ -274,6 +247,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            text-decoration: none;
             transition: background 0.2s;
             box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
         }
@@ -374,64 +348,6 @@
             margin-top: 8px;
         }
 
-        #pix-section {
-            display: none;
-            background: var(--card-bg);
-            border: 2px solid var(--primary);
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            grid-column: span 2;
-        }
-
-        @media (max-width: 768px) {
-            #pix-section {
-                grid-column: span 1;
-            }
-        }
-
-        .qr-box {
-            background: #ffffff;
-            border: 1px solid var(--border);
-            padding: 12px;
-            border-radius: 8px;
-            display: inline-block;
-            margin: 15px 0;
-        }
-
-        .qr-box img {
-            width: 180px;
-            height: 180px;
-        }
-
-        .copy-box {
-            display: flex;
-            gap: 8px;
-            max-width: 450px;
-            margin: 10px auto;
-        }
-
-        .copy-box input {
-            flex: 1;
-            padding: 10px 12px;
-            background: #f1f5f9;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-family: monospace;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .btn-copy {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 10px 18px;
-            border-radius: 6px;
-            font-weight: 700;
-            cursor: pointer;
-        }
-
         footer {
             text-align: center;
             margin-top: 40px;
@@ -503,55 +419,20 @@
             </div>
         </div>
 
-        <div class="checkout-card" id="form-card">
+        <div class="checkout-card">
             <h2 class="form-title">
                 <i class="fa-solid fa-shield-halved" style="color: var(--success);"></i>
-                Dados para Envio & Pagamento
+                Finalizar Compra Segura
             </h2>
 
-            <form id="order-form">
-                <div class="form-group">
-                    <label>Nome Completo</label>
-                    <input type="text" id="cust-name" required placeholder="Digite seu nome completo">
-                </div>
-
-                <div class="form-group">
-                    <label>CPF (Necessário para a nota fiscal e Pix)</label>
-                    <input type="text" id="cust-cpf" required placeholder="000.000.000-00">
-                </div>
-
-                <div class="form-group">
-                    <label>E-mail para rastreio</label>
-                    <input type="email" id="cust-email" required placeholder="seuemail@exemplo.com">
-                </div>
-
-                <div class="form-group">
-                    <label>WhatsApp / Telefone</label>
-                    <input type="tel" id="cust-phone" value="(21) 97351-8323" required>
-                </div>
-
-                <button type="submit" class="btn-syncpay">
-                    <i class="fa-brands fa-pix"></i> GERAR PIX DE R$ 29,99 AGORA
-                </button>
-            </form>
-        </div>
-
-        <div id="pix-section">
-            <h2 style="color: var(--primary); font-size: 1.4rem; font-weight: 800;">
-                <i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Pedido Confirmado!
-            </h2>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">
-                Escaneie o QR Code abaixo ou copie o código Pix para concluir a compra de <strong>R$ 29,99</strong>.
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+                Clique no botão abaixo para ser redirecionado com segurança para o checkout de pagamento via Pix da <strong>Sync Pay</strong>.
             </p>
 
-            <div class="qr-box">
-                <img id="syncpay-qr-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALsAAAC+CAYAAABtXX7ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAApjSURBVHhe7d3bktw2DEVRKv//z+Mnp9CnhlsAmuqZBGc9hrhQMkOhnLFzfX19fS2zAa611qOHvfvv0nVd+o/+ValJdSKqqTU0VtcjjY1insZRTaW5O1ozm1fR7aF5T/hH/4HZ/5UPu43hw25jvMzs2fmK6OwVa9KaotjKGqG87JrSWJKtQ3GK+msdio00L8rWWMU6FJulNX2z2xg+7DbGdozRTwChPPocaWxUyavE7rxT48TzU1xFpX+keSRbcxWeUfvTOyWU55vdxvBhtzF82G2Mj87sukZ0vuvOfllaM9uvoru3O/SOae/0jLRGqP+pNUJ5vtltDB92G+OjY4yiT6XWydI6hHpQHcr7aaf2TXWiu5rdOnSmCOX5ZrcxfNhtDB92G2M7s3fpnEQzVHbtHVo3OtUj0n7ZHpRHa6obm42rorqR9sjmEa3pm93G8GG3MV7GmCdkP8e0tm4+uT+5tgrP8cTaKuz102ur8By69gTf7DaGD7uN4cNuY1w/+TeCVeY0mu+ya11aU53oT3m6RrQf5VIPrRNpLOn2eIJvdhvDh93GuNaB33qkTxWhzxjVoTyiNbN1Knka21XpQbGR5nXRrzftRWMjzYuxp9Z8s9sYPuw2hg+7jfHyW48079C8FVXyNDZLaz4xQ5JTNWnfXZW9UWykeV3aj87bCbpv3+w2hg+7jXGtzW890mdFPw/Zz7HWrHzGKrEnVPpR7NNrP0H3k6X7zp4bRf3pvflmtzF82G0MH3YbYzuzV+hslPXEnKa6eZHW0Lzs7El1umvrm/UoW0fXsnQvFdSzuzfaj292G8OH3cbwYbcxXmZ2mo1oFsrOrIr6qewMV+mfRf3Wzd66a9HdM9H7p7Wsd/bW9cS+fbPbGD7sNsbLGEOynxX9dFRiCdWJqKbWoNhI8xS9m+ya0lhCdSKqma2xbsYv7aHrEdWJKjUjzfPNbmP4sNsYPuw2xvYvSdJ5J9qkrHUwrxIbUZ6imTG7pjQ20jyKjbp579CeUeyvcbo3eo/RXZ0s6ueb3cbwYbcxtmPMfwl9uiL9VEaaR7EVWrdD96I1dX1H8yKtUYmNunmEaio6C77ZbQwfdhvDh93GuNbmpx4r89WJvDuVuhH1oJrdPJV9N9qPZs8u6l9Bz0R7rcRGmkeopm92G8OH3cbYjjGKPiXZvGzc+iY2W0dp3R2qqTU0lvZGaxH1oLX1Rg+S7a9rKrsfiuvSvflmtzF82G0MH3Yb48iPC+hslEWttWYldkdrUJ7GZlFNov268yz11zoU26U9Iu1Hs392TdF7881uY/iw2xjX2vyBa/0E6Kdkp5KnsZHmPfFZO0X3s/NU/65PvJuu7t4ozze7jeHDbmP4sNsY6f81ZFZ2flXar1JHc3eeqPmU7l41j9aiU89LPVS2Z6VmpPV9s9sYPuw2RnqMoU+Jxu5QjYpsvwrdG33+tb+uR1Sni/rrWqT9aW/ZNdWN1TitE2nsjtbwzW5j+LDbGD7sNsa1Nj8uQHRm0tloR/MirUGxXdSju1bRrVPJo1hdI5SXXVMUS2sqO+vrmm92G8OH3cbwYbcxXmZ2nXF2Ts1XkdZUT8x3p+h+ohM9qb7Sfk88f2U/J1T2Tc/rm93G8GG3MbY/LvAJ3dGkq9ujkqexn5B9j7pG6BkrKj1P02fwzW5j+LDbGD7sNsa1Nr/1qLNWdo1oXqQ1KFZ196axO1RDac1sLuXR2pJ1XSNaN6rUiaimyvbQmt083+w2hg+7jdH6ux7185D95NKa0lhCdQh9/rNrq/CM3bUKrRNpTYrN0pqKemSfn9YU/br5ZrcxfNhtDB92G+Namz+ppPNOVJmhokqexkaal42lOKL9FNW9y/1La1T2ne2hqC7VpLlYa9JzaO5OJY/25pvdxvBhtzGOjDFdp3rQp/IJuu9P9CT0/LQW6TNFmteN1bWn6T59s9sYPuw2hg+7jbH9k0o679Aa+cScVtlPRHujmpSnsjNrpZ/GZn9tqE5lLdJ+ldgsrZmto3m+2W0MH3Yb41rJ33qkT6V+LnY0L9IaldhI857Yt+Z1P/lRN09pHdpbti7l0dod+rXpopq+2W0MH3Ybw4fdxniZ2WkWIzobRTRDVVCdyl533qmpuVF235U1lY3VZ6LYSPOI1jyxN1pTGhv5ZrcxfNhtDB92P4jwvozJSdvWhtfbOepXUiqlnJy8Zq3Im19c36juZFWoP6d2l/qkv9tc6O5vlmtzF82G2MazV+61E/D9lPDq0pje2iHhH10xoa233GqJL3TuyO1qCzQGuK+tN7i7QHxUaa55vdxvBhtzF82G2Ma21mdqKzUHaGo/qap7Hd+Y7QvrNrFVRH1yLtR7EVWjeiHpSn6Netu0Yozze7jeHDbmNs/wuq0k9Cx1P16dNFa136HDSO0Fqke6vERppXiY2yeRpHNRW9m+yaor35ZrcxfNhtDB92G+Nam79d4NN0vqI57dRaRP117ZRuD32ObK7mEXpv2X536Pmza0TzfLPbGD7sNsaR/zVkVCl34lOltE6kNbufao09odLvqdiI8iKqsW7ecUT9NI9iI83zzW5j+LDbGD7sNsZ2Ztd5J9qkrFXMo1iidbK0X3aeVNRf61BspHnRXY2Yq7Hv1P2rUkNjs+/4rs4O5emab3Ybw4fdxtj+1KN+AuizorEdWp9qUiytfYL2z9J9Uh2Krax1Uc3KviPNe+LX1De7jeHDbmP4sNsY6Zmd6EwVPTF7dXX7V/I0NqrkUSzROpHWpNhI806h85ZdUxob+Wa3MXzYbYztf0FV9FnpqnyOsrEap3Uijd2hGuvm3VAPjd2hGutgnYjeaZfuk95bRP0reb7ZbQwfdhvDh93GuNbmD1zrLKTzTwfVpDVFsbpGKI/WSGXfUSWPYruoR2WN0L6pTiWP9uab3cbwYbcxfNhtjO2PCyidf7K6NSt5ldgdqvGO2J960D4pT1EdRfMtoTzaq8ZGmkfvLVtH43yz2xg+7DbG8R8X0E9O1yd6RNqPemhsRHkV1IOc6k9+896Ib3Ybw4fdxvBhtzHSM/sJOrPRby+pE9vUHtSf+mksoTqR1jy1t2wdWiOaV9Ht0c3zzW5j+LDbGNfa/NTjKfSprKA6tBbp568SG1Geor3RWkR7ufNU3b+o/rp5xhNrKsZqnG92G8OH3cbwYbcxXmZ2nXE6Ts1X3TqKZr9TqAftO6I8WlvfrEcau0M1iNbXOpXn2OnmKd/sNoYPu42xHWP000Eoj9Yi/TRprK7vVPI0NqrkZZ+xottfaewJ9Lyf3gvRvfhmtzF82G0MH3Yb49fM7O/Q2SzK9qzU0Ni4rmtZ1EPXSKU/1e3279J9d98p5flmtzF82G2MXzPG6CeHaJ0TPTSPalbqkE/0yNJ+1ENju2jkiGgvit6pb3Ybw4fdxvBhtzG2M3uXzkk0Q51C+6a5kNaiU/uu9Dj13io9d7QGvTeqSbG61kU1fbPbGD7sNsbLGPOE7OdYPzmVWEJ1okpNle1BqL/W78bqWqQ1K7GExopI+2X3raiHb3Ybw4fdxvBhtzE++nc9mv2kPzg8mSFaJa1oAAAAAElFTkSuQmCC" alt="QR Code Pix Sync Pay">
-            </div>
-
-            <div class="copy-box">
-                <input type="text" id="syncpay-pix-code" value="00020101021226990014br.gov.bcb.pix2577qrcode.syncpay.com.br/v2/01aXMWEswRaxmpbweM3v2MckqZ0mHraNrxraKmUce29FRq520400005303986540529.995802BR5920SYNCPAY INTERMEDIACAO LTDA6008BRASILIA62070503***63046C0F" readonly>
-                <button class="btn-copy" onclick="copySyncPayPix()">Copiar Código Pix</button>
-            </div>
+            <!-- COLE O LINK DO SEU CHECKOUT DA SYNC PAY NO href ABAIXO -->
+            <a href="https://link.syncpayments.com.br/fFTiWm" class="btn-syncpay">
+                <i class="fa-brands fa-pix"></i> PAGAR R$ 29,99 VIA PIX
+            </a>
         </div>
 
         <div class="reviews-section">
@@ -567,7 +448,6 @@
             </div>
 
             <div class="reviews-grid">
-                
                 <div class="review-card">
                     <div class="review-user">
                         <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" class="review-avatar" alt="Cliente Mariana">
@@ -606,7 +486,6 @@
                     <p class="review-text">"Muito prática para a cozinha, não precisa ficar encostando com a mão suja de comida. Veda super bem o cheiro."</p>
                     <div class="review-date">Há 1 semana</div>
                 </div>
-
             </div>
         </div>
 
@@ -617,55 +496,5 @@
         <p style="margin-top: 4px; font-size: 0.75rem;">Processamento de pagamento 100% seguro via Sync Pay Intermediações.</p>
     </footer>
 
-    <script>
-        // COLA A TUA CHAVE PRIVADA DE API DA SYNC PAY DENTRO DAS ASPAS ABAIXO:
-        const SYNC_PAY_API_KEY = "9e56a541-c59f-4126-a294-db0f50708b02";
-
-        document.getElementById('order-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            const dadosPedido = {
-                amount: 29.99,
-                payment_method: "pix",
-                customer: {
-                    name: document.getElementById('cust-name').value,
-                    cpf: document.getElementById('cust-cpf').value,
-                    email: document.getElementById('cust-email').value,
-                    phone: document.getElementById('cust-phone').value
-                }
-            };
-
-            try {
-                const response = await fetch("https://api.syncpay.com.br/v1/transactions", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Authorization": "Bearer " + SYNC_PAY_API_KEY
-                    },
-                    body: JSON.stringify(dadosPedido)
-                });
-
-                const data = await response.json();
-
-                if (data.pix_code || data.success) {
-                    if(data.pix_code) document.getElementById('syncpay-pix-code').value = data.pix_code;
-                    if(data.qr_code_url) document.getElementById('syncpay-qr-img').src = data.qr_code_url;
-                }
-            } catch (error) {
-                console.log("Integrado em modo de exibição:", error);
-            }
-
-            document.getElementById('form-card').style.display = 'none';
-            document.getElementById('pix-section').style.display = 'block';
-            document.getElementById('pix-section').scrollIntoView({ behavior: 'smooth' });
-        });
-
-        function copySyncPayPix() {
-            var input = document.getElementById("syncpay-pix-code");
-            input.select();
-            navigator.clipboard.writeText(input.value);
-            alert("✅ Código Pix exclusivo da Sync Pay copiado! Abra a opção Pix Copia e Cola no app do seu banco para pagar.");
-        }
-    </script>
 </body>
 </html>
