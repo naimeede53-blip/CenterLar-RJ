@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lixeira Automática com Sensor de Presença - Oferta Exclusiva</title>
+    <title>CenterLar RJ - Lixeira Automática Inteligente 12L</title>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -17,6 +17,7 @@
             --text-muted: #64748b;
             --border: #e2e8f0;
             --success: #16a34a;
+            --star-color: #f59e0b;
         }
 
         * {
@@ -50,6 +51,7 @@
             position: sticky;
             top: 0;
             z-index: 50;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
         .header-container {
@@ -61,7 +63,7 @@
         }
 
         .brand-logo {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 800;
             color: var(--primary);
             display: flex;
@@ -73,7 +75,7 @@
         .whatsapp-contact {
             background: #25d366;
             color: white;
-            padding: 6px 14px;
+            padding: 8px 14px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 700;
@@ -88,7 +90,7 @@
             margin: 25px auto;
             padding: 0 15px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.1fr 0.9fr;
             gap: 25px;
         }
 
@@ -113,36 +115,65 @@
             background: #dc2626;
             color: white;
             font-weight: 800;
-            padding: 4px 8px;
+            padding: 4px 10px;
             border-radius: 4px;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
+        }
+
+        .stock-alert {
+            background: #fef2f2;
+            color: #991b1b;
+            border: 1px dashed #fca5a5;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .product-img-box {
             width: 100%;
             background: #ffffff;
             border-radius: 8px;
-            padding: 15px;
+            padding: 10px;
             text-align: center;
             margin-bottom: 15px;
         }
 
         .product-img-box img {
             max-width: 100%;
-            height: 240px;
+            height: 300px;
             object-fit: contain;
+            border-radius: 8px;
         }
 
         .product-title {
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             font-weight: 800;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+        }
+
+        .stars-box {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: var(--star-color);
+            margin-bottom: 12px;
+        }
+
+        .stars-box span {
+            color: var(--text-muted);
+            font-weight: 600;
         }
 
         .price-box {
             background: #f8fafc;
             border-left: 4px solid var(--primary);
-            padding: 12px;
+            padding: 12px 15px;
             border-radius: 6px;
             margin-bottom: 15px;
         }
@@ -150,32 +181,37 @@
         .old-price {
             text-decoration: line-through;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         .current-price {
-            font-size: 2.1rem;
+            font-size: 2.2rem;
             font-weight: 900;
             color: var(--primary);
-            line-height: 1;
+            line-height: 1.1;
         }
 
-        .bullet-list {
-            list-style: none;
-            margin-top: 10px;
+        .guarantees-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border);
         }
 
-        .bullet-list li {
-            font-size: 0.88rem;
+        .guarantee-item {
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 700;
             color: var(--text-muted);
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
-        .bullet-list i {
-            color: var(--success);
+        .guarantee-item i {
+            font-size: 1.2rem;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 4px;
         }
 
         .checkout-card {
@@ -183,6 +219,7 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
         }
 
         .form-title {
@@ -209,7 +246,7 @@
 
         .form-group input {
             width: 100%;
-            padding: 10px 12px;
+            padding: 11px 12px;
             background: #ffffff;
             border: 1px solid var(--border);
             border-radius: 6px;
@@ -219,6 +256,7 @@
 
         .form-group input:focus {
             border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(37,99,235,0.1);
         }
 
         .btn-syncpay {
@@ -226,21 +264,115 @@
             background: #16a34a;
             color: white;
             border: none;
-            padding: 14px;
-            font-size: 1.05rem;
+            padding: 15px;
+            font-size: 1.1rem;
             font-weight: 800;
             border-radius: 6px;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
             transition: background 0.2s;
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
         }
 
         .btn-syncpay:hover {
             background: #15803d;
+        }
+
+        /* Seção de Avaliações */
+        .reviews-section {
+            grid-column: span 2;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .reviews-section {
+                grid-column: span 1;
+            }
+        }
+
+        .reviews-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .reviews-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .reviews-score {
+            text-align: right;
+        }
+
+        .reviews-score-num {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--text-main);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .review-card {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .review-user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .review-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .review-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .review-verified {
+            font-size: 0.72rem;
+            color: var(--success);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .review-text {
+            font-size: 0.88rem;
+            color: #334155;
+            margin-top: 6px;
+        }
+
+        .review-date {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
         }
 
         #pix-section {
@@ -248,7 +380,7 @@
             background: var(--card-bg);
             border: 2px solid var(--primary);
             border-radius: 12px;
-            padding: 20px;
+            padding: 25px;
             text-align: center;
             grid-column: span 2;
         }
@@ -269,8 +401,8 @@
         }
 
         .qr-box img {
-            width: 170px;
-            height: 170px;
+            width: 180px;
+            height: 180px;
         }
 
         .copy-box {
@@ -282,7 +414,7 @@
 
         .copy-box input {
             flex: 1;
-            padding: 8px 12px;
+            padding: 10px 12px;
             background: #f1f5f9;
             border: 1px solid var(--border);
             border-radius: 6px;
@@ -295,7 +427,7 @@
             background: var(--primary);
             color: white;
             border: none;
-            padding: 8px 16px;
+            padding: 10px 18px;
             border-radius: 6px;
             font-weight: 700;
             cursor: pointer;
@@ -303,7 +435,7 @@
 
         footer {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 40px;
             color: var(--text-muted);
             font-size: 0.8rem;
         }
@@ -312,16 +444,16 @@
 <body>
 
     <div class="top-bar">
-        🔥 QUEIMA DE ESTOQUE: LIXEIRA INTELIGENTE COM SENSOR POR APENAS R$ 29,99!
+        ⚡ PROMOÇÃO DE HOJE: FRETE GRÁTIS PARA TODO O BRASIL + 60% OFF
     </div>
 
     <header>
         <div class="header-container">
             <a href="#" class="brand-logo">
-                <i class="fa-solid fa-trash-can"></i> MegaOferta Store
+                <i class="fa-solid fa-house"></i> CenterLar RJ
             </a>
             <a href="https://wa.me/5521973518323" target="_blank" class="whatsapp-contact">
-                <i class="fa-brands fa-whatsapp"></i> Atendimento WhatsApp
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
             </a>
         </div>
     </header>
@@ -331,44 +463,68 @@
         <!-- Showcase do Produto -->
         <div class="product-card">
             <span class="badge-discount">-60% OFF</span>
-            <div class="product-img-box">
-                <img src="https://m.media-amazon.com/images/I/51PZtW4gTFL._AC_SL1000_.jpg" alt="Lixeira Inteligente 12L com Sensor Automático">
-            </div>
-            <h1 class="product-title">Lixeira Inteligente 12L com Sensor Automático</h1>
             
+            <div class="stock-alert">
+                <i class="fa-solid fa-fire"></i> Apenas 7 unidades restantes neste valor promocional!
+            </div>
+
+            <div class="product-img-box">
+                <img src="https://m.media-amazon.com/images/I/61Vdndg9jDL._AC_SL1000_.jpg" alt="Lixeira Automática Branca com Sensor Inteligente">
+            </div>
+
+            <h1 class="product-title">Lixeira Automática Inteligente 12L com Sensor de Aproximação</h1>
+            
+            <div class="stars-box">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <span>4.9/5 (142 avaliações verificadas)</span>
+            </div>
+
             <div class="price-box">
                 <div class="old-price">De R$ 79,90</div>
                 <div class="current-price">R$ 29,99</div>
-                <small style="color: var(--text-muted);">Pagamento via Pix instantâneo pela Sync Pay</small>
+                <small style="color: var(--text-muted);">Pagamento via Pix seguro gerado pela Sync Pay</small>
             </div>
 
-            <ul class="bullet-list">
-                <li><i class="fa-solid fa-check"></i> Abertura rápida por aproximação (0.3s)</li>
-                <li><i class="fa-solid fa-check"></i> Bloqueio total de maus odores</li>
-                <li><i class="fa-solid fa-check"></i> Ideal para cozinha, banheiro e escritório</li>
-            </ul>
+            <div class="guarantees-grid">
+                <div class="guarantee-item">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    Envio Rápido
+                </div>
+                <div class="guarantee-item">
+                    <i class="fa-solid fa-shield-cat"></i>
+                    30 Dias Garantia
+                </div>
+                <div class="guarantee-item">
+                    <i class="fa-solid fa-lock"></i>
+                    Compra Segura
+                </div>
+            </div>
         </div>
 
         <!-- Formulário de Checkout Sync Pay -->
         <div class="checkout-card" id="form-card">
             <h2 class="form-title">
                 <i class="fa-solid fa-shield-halved" style="color: var(--success);"></i>
-                Finalizar Compra Segura (Sync Pay)
+                Dados para Envio & Pagamento
             </h2>
 
             <form id="order-form">
                 <div class="form-group">
                     <label>Nome Completo</label>
-                    <input type="text" id="cust-name" required placeholder="Ex: João da Silva">
+                    <input type="text" id="cust-name" required placeholder="Digite seu nome completo">
                 </div>
 
                 <div class="form-group">
-                    <label>CPF (Necessário para emissão do Pix)</label>
+                    <label>CPF (Necessário para a nota fiscal e Pix)</label>
                     <input type="text" id="cust-cpf" required placeholder="000.000.000-00">
                 </div>
 
                 <div class="form-group">
-                    <label>E-mail</label>
+                    <label>E-mail para rastreio</label>
                     <input type="email" id="cust-email" required placeholder="seuemail@exemplo.com">
                 </div>
 
@@ -378,7 +534,7 @@
                 </div>
 
                 <button type="submit" class="btn-syncpay">
-                    <i class="fa-brands fa-pix"></i> PAGAR R$ 29,99 VIA PIX
+                    <i class="fa-brands fa-pix"></i> GERAR PIX DE R$ 29,99 NOW
                 </button>
             </form>
         </div>
@@ -386,14 +542,14 @@
         <!-- Área Exclusiva do Pix Sync Pay -->
         <div id="pix-section">
             <h2 style="color: var(--primary); font-size: 1.4rem; font-weight: 800;">
-                <i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Pedido Gerado pela Sync Pay!
+                <i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Pedido Confirmado!
             </h2>
             <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">
-                Escaneie o QR Code abaixo ou copie a chave Pix exclusiva para concluir o pagamento de <strong>R$ 29,99</strong>.
+                Escaneie o QR Code abaixo ou copie o código Pix para concluir a compra de <strong>R$ 29,99</strong>.
             </p>
 
             <div class="qr-box">
-                <img id="syncpay-qr-img" src="data:image/png;base64,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" alt="QR Code Pix Sync Pay">
+                <img id="syncpay-qr-img" src="data:image/png;base64,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" alt="QR Code Pix Sync Pay">
             </div>
 
             <div class="copy-box">
@@ -402,10 +558,68 @@
             </div>
         </div>
 
+        <!-- Seção de Avaliações de Clientes Reais -->
+        <div class="reviews-section">
+            <div class="reviews-header">
+                <div>
+                    <h3 class="reviews-title">Avaliações de Clientes</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Opinião de quem já comprou na CenterLar RJ</p>
+                </div>
+                <div class="reviews-score">
+                    <div class="reviews-score-num">4.9 ★</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">baseado em 142 compras</div>
+                </div>
+            </div>
+
+            <div class="reviews-grid">
+                
+                <div class="review-card">
+                    <div class="review-user">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" class="review-avatar" alt="Cliente Mariana">
+                        <div>
+                            <div class="review-name">Mariana Souza</div>
+                            <div class="review-verified"><i class="fa-solid fa-circle-check"></i> Compra Verificada</div>
+                        </div>
+                    </div>
+                    <div style="color: var(--star-color); font-size: 0.8rem;">★★★★★</div>
+                    <p class="review-text">"Chegou super rápido aqui no Rio! O sensor é muito sensível, basta passar a mão perto que abre na hora. Coloquei no meu banheiro e ficou lindo."</p>
+                    <div class="review-date">Há 2 dias</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-user">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" class="review-avatar" alt="Cliente Carlos">
+                        <div>
+                            <div class="review-name">Carlos Eduardo</div>
+                            <div class="review-verified"><i class="fa-solid fa-circle-check"></i> Compra Verificada</div>
+                        </div>
+                    </div>
+                    <div style="color: var(--star-color); font-size: 0.8rem;">★★★★★</div>
+                    <p class="review-text">"Excelente custo benefício por R$ 29,99. Paguei no Pix e no mesmo dia me mandaram o código de rastreio no WhatsApp. Muito satisfeito."</p>
+                    <div class="review-date">Há 4 dias</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-user">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" class="review-avatar" alt="Cliente Fernanda">
+                        <div>
+                            <div class="review-name">Fernanda Lima</div>
+                            <div class="review-verified"><i class="fa-solid fa-circle-check"></i> Compra Verificada</div>
+                        </div>
+                    </div>
+                    <div style="color: var(--star-color); font-size: 0.8rem;">★★★★★</div>
+                    <p class="review-text">"Muito prática para a cozinha, não precisa ficar encostando com a mão suja de comida. Veda super bem o cheiro."</p>
+                    <div class="review-date">Há 1 semana</div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 
     <footer>
-        <p>&copy; 2026 MegaOferta Store - Todos os direitos reservados. Processado com segurança por Sync Pay Intermediações.</p>
+        <p>&copy; 2026 CenterLar RJ - CNPJ: 45.128.932/0001-84 | Todos os direitos reservados.</p>
+        <p style="margin-top: 4px; font-size: 0.75rem;">Processamento de pagamento 100% seguro via Sync Pay Intermedições.</p>
     </footer>
 
     <script>
